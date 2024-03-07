@@ -1,9 +1,11 @@
-import {Rule, defineField, defineType} from 'sanity'
+import {defineField, defineType} from 'sanity'
+import {BiSolidDrink} from 'react-icons/bi'
 
 export default defineType({
   name: 'cocktail',
   type: 'document',
   title: 'Cocktail',
+  icon: BiSolidDrink,
   fields: [
     defineField({
       name: 'name',
@@ -18,11 +20,11 @@ export default defineType({
       initialValue: 'unsorted',
       options: {
         list: [
-          {title: 'Unsorted', value: 'unsorted'},
           {title: 'Sassafras', value: 'Sassafras'},
           {title: '48 Record Bar', value: '48 Record Bar'},
+          {title: 'Unsorted', value: 'unsorted'},
         ],
-        layout: 'radio',
+        layout: 'dropdown',
         direction: 'horizontal',
       },
       validation: (rule) => rule.required(),
